@@ -1,4 +1,4 @@
-const PORT = 3000;
+const PORT = 3001;
 const HOST = 'localhost';
 
 const express = require('express');
@@ -16,7 +16,7 @@ const session = require('express-session');
         })
     );
 
-    app.get('/', function(req, res) {
+    app.get('/api/', function(req, res) {
         if(!req.session.pageCountcurrent)
             req.session.pageCountcurrent = 0;
         req.session.pageCountcurrent++;
