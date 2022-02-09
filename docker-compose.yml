@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  server:
+    container_name: server
+    build:
+      context: .
+      dockerfile: backend/dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 3001:3001
+
+  client:
+    container_name: client
+    build:
+      context: .
+      dockerfile: frontend/dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 3000:3000
